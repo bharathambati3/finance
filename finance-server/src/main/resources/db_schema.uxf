@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <help_text>fontsize=10</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>80</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>mf_company
+-
+id
+name
+created_on</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>80</y>
+      <w>100</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>mf_schemes
+-
+id
+company_id
+name
+fund_type
+is_tax_saving
+created_on
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>80</y>
+      <w>100</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>user
+-
+id
+name
+password
+email_id
+phone_no
+registration_type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>80</y>
+      <w>100</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>mf_investment
+-
+id
+user_id
+mf_id
+purchased_on
+invested_on
+amount</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>80</y>
+      <w>100</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>mf_sip
+-
+id
+mf_investment_id
+start_date
+end_date
+investment_count
+base_amount
+sip_reg_no
+bank_ref
+recurring_kind
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

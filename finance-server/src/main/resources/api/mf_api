@@ -1,0 +1,53 @@
+
+/api/mf/companies
+/api/mf/company/{id}
+
+
+/api/mf/amount
+mfFilter: {
+    userId: {id}
+    company: {id}
+    scheme:{id} //if null => all.
+    DateRange: {
+        from:
+        to:
+    }   //if null => all
+}
+
+/api/mf/profit
+mfFilter: {
+    userId: {id}
+    company: {id}
+    scheme:{id} //if null => all.
+    DateRange: {
+        from:
+        to:
+    }   //if null => all
+}
+
+
+/api/mf/company/best
+{
+    userId: {id}
+    companyId: {id}
+}
+
+/api/mf/scheme/best
+{
+    userId: {id}
+    schemeId: {id}
+}
+
+/api/mf/future/predict
+{
+    futureDate: {date}
+    mfFilter: {
+        userId: {id}
+        company: {id}
+        scheme:{id} //if null => all.
+        DateRange: {
+            from:
+            to:
+        }   //if null => all
+    }
+}
