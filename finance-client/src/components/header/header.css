@@ -1,0 +1,21 @@
+.main {
+    background: #c5d4ff;
+    padding: 10px 0px;
+}
+
+.main div {
+    display: inline-block;
+    width: 33%;
+}
+
+.start {
+    text-align: left;
+}
+
+.mid {
+    text-align: center;
+}
+
+.end {
+    text-align: right;
+}

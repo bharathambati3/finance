@@ -1,0 +1,12 @@
+.root {
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    justify-items: start;
+    align-items: end;
+}
+
+.button {
+    width: 20%;
+}

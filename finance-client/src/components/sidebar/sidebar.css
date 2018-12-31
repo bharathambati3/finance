@@ -1,0 +1,35 @@
+.main {
+    padding:10px;
+    width: 160px;
+    display: inline-block;
+    background: #ea8aee;
+    height: 500px;
+}
+
+. list {
+    list-style: none;
+}
+
+.list a {
+    color: #0600ff;
+    text-decoration: none;
+    padding: 0px 0px 2px 0px;
+    font-size: 16px;
+}
+
+.list li {
+    padding: 5px 1px;
+    margin: 1px 0px;
+    box-shadow: 1px 4px #ea8aef;
+}
+
+.list a:hover,
+.list a.active {
+    color: #1890ff;
+    border-bottom: 1px solid white;
+}
+
+.selected {
+    color: white !important;
+    border-bottom: 1px solid white;
+}

@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+.btn {
+    width: 25%;
+    height: 10px;
+    background-color: white;
+}

@@ -1,0 +1,23 @@
+.root {
+    display: inline-flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+.main {
+    display: inline-flex;
+    flex-direction: column;
+    z-index: 3;
+    position: absolute; /*newly added*/
+    top: 190px;/*newly added*/
+    background-color: white;
+}
+
+.li {
+    padding: 8px;
+}
+
+.li:hover {
+    cursor: pointer;
+    background-color: #EEEEEE;
+}

@@ -1,0 +1,5 @@
+.main {
+    width: calc(100% - 200px);
+    display: inline-block;
+    vertical-align: top;
+}
