@@ -1,0 +1,639 @@
+{
+	"info": {
+		"_postman_id": "dc8bd4e5-bc86-d4fd-e085-44298d7cb679",
+		"name": "finance_new",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "investment",
+			"item": [
+				{
+					"name": "purchaseAmount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\" : \"a\",\n\t\"schemeId\" : 1,\n\t\"dateTimeRange\" : {\n\t\t\"startDate\": \"2018-01-01T11:33\",\n\t\t\"endDate\": \"2018-05-01T11:33\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/investment/purchaseAmount",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"investment",
+								"purchaseAmount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purchaseAmount_group_company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\" : \"a\",\n\t\"companyId\": 5\n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/investment/purchaseAmount/group/company",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"investment",
+								"purchaseAmount",
+								"group",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purchaseAmount_group_scheme",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\" : \"a\"\n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/investment/purchaseAmount/group/scheme",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"investment",
+								"purchaseAmount",
+								"group",
+								"scheme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "investments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\" : \"a\",\n\t\"dateTimeRange\" : {\n\t\t\"startDate\": \"2018-01-01T11:33\",\n\t\t\"endDate\": \"2018-06-21T08:53\"\n\t},\n\t\"schemeId\": 5,\n\t\"investmentType\": \"SIP\"\n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/investments",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"investments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-investment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"b\",\n\t\"schemeId\": 2,\n\t\"purchasedOn\":\"2018-05-17T14:22:23\",\n\t\"investedOn\": \"2018-05-17T14:22:23\",\n\t\"amount\": 100.0,\n\t\"purchaseNav\": 23.0,\n\t\"type\": \"SIP\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/investment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"investment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-investment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/api/mf/investment/55",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"investment",
+								"55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-investment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"b\",\n\t\"schemeId\": 1,\n\t\"purchasedOn\":\"2018-05-17T14:22:23\",\n\t\"investedOn\": \"2018-05-17T14:22:23\",\n\t\"amount\": 101.0,\n\t\"purchaseNav\": 23.0,\n\t\"type\": \"SIP\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/investment/57",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"investment",
+								"57"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mature-investments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\" : \"a\",\n\t\"dateTimeRange\" : {\n\t\t\"startDate\": \"2018-01-01T11:33\",\n\t\t\"endDate\": \"2018-06-21T08:53\"\n\t},\n\t\"schemeId\": 5,\n\t\"investmentType\": \"SIP\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/investments",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"investments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mf_companies",
+			"item": [
+				{
+					"name": "companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/companies",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompany",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/company/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"company",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCompany",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"SBI-1\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/company",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompany",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"SBI-2\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/company/9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"company",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCompany",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/api/mf/company/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"company",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mf_schemas",
+			"item": [
+				{
+					"name": "schemes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/schemes",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"schemes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getScheme",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/scheme/18",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"scheme",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createScheme",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"company\": {\n    \"id\": 1,\n    \"name\": \"SBI\",\n    \"createdOn\": \"2018-05-17T14:22:23\"\n  },\n  \"name\": \"SBI Blue Chip Fund - 1\",\n  \"fundType\": \"LARGE_CAP\",\n  \"taxSaving\": false\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/scheme",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"scheme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateScheme",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"company\": {\n    \"id\": 1,\n    \"name\": \"SBI\",\n    \"createdOn\": \"2018-05-17T14:22:23\"\n  },\n  \"name\": \"SBI Blue Chip Fund - 2\",\n  \"fundType\": \"LARGE_CAP\",\n  \"createdOn\": \"2018-05-17T14:46:51\",\n  \"updatedOn\": \"2018-05-17T14:46:51\",\n  \"taxSaving\": false\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/mf/scheme/18",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mf",
+								"scheme",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sip",
+			"item": [
+				{
+					"name": "All-sip-reg-info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\" : \"a\"\n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/sips",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"sips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upcoming-sips",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\" : \"a\",\n\t\"upComingSip\": 10,\n\t\"range\" : {\n\t\t\"startDate\": \"2018-12-01T11:33\",\n\t\t\"endDate\": \"2018-12-30T11:33\"\n\t} \n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/upcoming/sips",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"upcoming",
+								"sips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sip-payable-date-filter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\" : \"a\",\n\t\n\t\"payableSipInDateRange\" : {\n\t\t\"startDate\": \"2018-04-21T11:33\",\n\t\t\"endDate\": \"2018-06-30T11:33\"\n\t} \n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/sip/payable",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"sip",
+								"payable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sips-montly-info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\" : \"a\",\n  \"year\": \"2018\",\n  \"month\": \"JANUARY\"\n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/sips/monthly",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"sips",
+								"monthly"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sips-daily-amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\" : \"a\"\n}"
+						},
+						"url": {
+							"raw": "{{finance_base_url}}/api/mf/daily/amount/payable",
+							"host": [
+								"{{finance_base_url}}"
+							],
+							"path": [
+								"api",
+								"mf",
+								"daily",
+								"amount",
+								"payable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
