@@ -26,7 +26,7 @@ function ButtonAppBar(props) {
                 <Toolbar className={classes.container}>
 
                     <Typography variant="title" color="inherit" className={classes.flex}>
-                        Playground
+                        Finance
                     </Typography>
                     <AccountCircle />
                 </Toolbar>
