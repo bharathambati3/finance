@@ -24,11 +24,31 @@ const MonthlySipFilter = (props) => {
   return <div className={classes.main}>
     <div className={classes.root}>
       <FormControl className={classes.formControl}>
+
+
+        <InputLabel htmlFor="year">Year</InputLabel>
+        <Select
+            native
+            value={props.year}
+            onChange={props.onYearChange}
+            inputProps={{
+                name: 'year',
+                id: 'year',
+            }}
+        >
+          <option value={"2018"}>2018</option>
+          <option value={"2019"}>2019</option>
+        </Select>
+
+      </FormControl>
+
+      <FormControl className={classes.formControl}>
+
         <InputLabel htmlFor="monthly">Monthly</InputLabel>
         <Select
           native
-          value={props.val}
-          onChange={props.onChange}
+          value={props.month}
+          onChange={props.onMonthChange}
           inputProps={{
             name: 'age',
             id: 'monthly',
@@ -44,11 +64,12 @@ const MonthlySipFilter = (props) => {
           <option value={"AUGUST"}>August</option>
           <option value={"SEPTEMBER"}>September</option>
           <option value={"OCTOBER"}>October</option>
-          <option value={"OCTOBER"}>October</option>
           <option value={"NOVEMBER"}>November</option>
           <option value={"DECEMBER"}>December</option>
         </Select>
+
       </FormControl>
+
     </div>
 
     <Button variant="contained"

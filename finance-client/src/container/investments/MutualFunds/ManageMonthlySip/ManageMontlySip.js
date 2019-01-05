@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {
-  createNewInvestment,
-  requestMonthlySipData, selectedMonth, showSipInfo,
-  storeSipData
+    createNewInvestment,
+    requestMonthlySipData, selectedMonth, selectedYear, showSipInfo,
+    storeSipData
 } from '../../../../actions/ManageMonthlySipAction/manageMontlySipAction'
 import ListMonthlySip from '../../../../components/investments/mf/sub_components/Manage/ListMonthlySip/ListMonthlySip';
 import { SUBMITTED_MODE } from '../../../../components/investments/mf/sub_components/Manage/ListMonthlySip/SingleSip'
@@ -23,8 +23,10 @@ class ManageMonthlySip extends Component {
     let sipInfo = (this.props.sipInfo) ? <SimpleModal info={this.props.sipInfo} handleClose={() => this.props.showSipInfo(null)}/>: null;
     return <div>
       {sipInfo}
-      <MonthlySipFilter val={this.props.filterMonth}
-                        onChange={(e) => this.props.selectedMonth(e.target.value)}
+      <MonthlySipFilter month={this.props.filterMonth}
+                        year={this.props.filterYear}
+                        onMonthChange={(e) => this.props.selectedMonth(e.target.value)}
+                        onYearChange={(e) => this.props.selectedYear(e.target.value)}
                         getMonthlySipInfo={this.getMonthlySipInfo}/>
       {listing}
     </div>
@@ -32,6 +34,7 @@ class ManageMonthlySip extends Component {
 
   getMonthlySipInfo = () => {
     let req = {
+      year: this.props.filterYear,
       month: this.props.filterMonth
     }
     let success = (data) => {
@@ -70,6 +73,7 @@ const mapStateToProps = state => {
     searchData: state.monthlySipData.searchData,
     sipInfo: state.monthlySipData.sipInfo,
     filterMonth: state.monthlySipData.filterMonth,
+      filterYear: state.monthlySipData.filterYear,
   }
 }
 
@@ -79,6 +83,7 @@ const mapDispatchToProps = dispatch => {
     storeSipData,
     showSipInfo,
     selectedMonth,
+    selectedYear,
     createNewInvestment,
   }, dispatch)
 }

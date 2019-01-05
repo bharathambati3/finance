@@ -28,6 +28,10 @@ export const selectedMonth = (data) => {
   return({type: Constants.FILTER_MONTH_SELECTED, payload: data});
 }
 
+export const selectedYear = (data) => {
+    return({type: Constants.FILTER_YEAR_SELECTED, payload: data});
+}
+
 let investment = {
   "userId": "a",
   "schemeId": null,

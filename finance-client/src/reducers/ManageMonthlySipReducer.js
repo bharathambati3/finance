@@ -9,6 +9,7 @@ const initialState = {
   searchData: null,
   sipInfo: null,
   filterMonth: moment().format('MMMM').toUpperCase(),
+  filterYear: moment().format('YYYY').toUpperCase(),
 }
 const ManageMonthlySipReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -26,6 +27,11 @@ const ManageMonthlySipReducer = (state = initialState, action) => {
       return {
         ...state,
         filterMonth: action.payload
+      }
+    case Constants.FILTER_YEAR_SELECTED:
+      return {
+          ...state,
+          filterYear: action.payload
       }
     default:
       return state
