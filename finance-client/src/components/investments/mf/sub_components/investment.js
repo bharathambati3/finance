@@ -4,12 +4,53 @@ import Summary from './summary'
 import Aux from '../../../hoc/aux'
 import MFFilter from '../filters/MFFilter'
 import * as Config from '../../../../config/Config'
+import DropDown from "../selectors/DropDown";
 
+const fundTypes = [
+    {
+      id: 0,
+      name: 'All',
+      value: null,
+    },
+    {
+      id: 1,
+      name: 'Tax Saver',
+      value: 'ELSS'
+    },
+    {
+        id: 2,
+        name: 'Large cap',
+        value: 'LARGE_CAP'
+    },
+    {
+        id: 3,
+        name: 'Mid cap',
+        value: 'MID_CAP'
+    },
+    {
+        id: 4,
+        name: 'Small cap',
+        value: 'SMALL_CAP'
+    },
+    {
+        id: 5,
+        name: 'Multi cap',
+        value: 'MULTI_CAP'
+    },
+    {
+        id: 6,
+        name: 'Hybrid',
+        value: 'HYBRID'
+    }
+]
 class Investment extends Component {
   constructor (props) {
 
     console.log('Investment constructor is called again :)')
     super(props)
+    this.state = {
+      fundType : 0
+    }
   }
 
   componentDidMount () {
@@ -30,6 +71,7 @@ class Investment extends Component {
   ]
 
   updateData = (data) => {
+    data["fundType"] = fundTypes[this.state.fundType].value;
     axios.post(`${Config.ROOT_URL}${Config.GET_INVESTMENTS}`, data)
       .then(response => {
         this.props.updateInv(response.data, data)
@@ -40,12 +82,21 @@ class Investment extends Component {
     this.updateData(this.props.data.request)
   }
 
+  updateFundType = (id) => {
+    this.setState({fundType: id});
+    const cb = () => {
+        this.updateData(this.props.data.request);
+    };
+    setTimeout(cb, 0);
+  }
+
   render () {
 
     return (
       <Aux>
         <MFFilter handleSubmit={this.handleSubmit} companies={this.props.companies} request={this.props.data.request}
                   updateData={this.updateData}/>
+        <DropDown label="FundType" data={fundTypes} selected={this.state.fundType} updateSelected={this.updateFundType}/>
         {(this.props.data.investments.length > 0) ?
           <Summary data={this.props.data.investments} content={this.dContent}/> : null}
       </Aux>
